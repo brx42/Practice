@@ -1,6 +1,6 @@
-﻿namespace Practice;
+﻿namespace Practice.Codewars;
 
-public static class Codewars
+public static class Kyu8
 {
     #region Return Negative
 
@@ -31,6 +31,22 @@ public static class Codewars
         return number > 0
             ? -Math.Abs(number)
             : Math.Abs(number);
+    }
+
+    #endregion
+
+    #region Find Multiples of a Number
+
+    public static List<int> FindMultiples(int integer, int limit)
+    {
+        List<int> resultValue = new();
+        
+        for (int i = integer; i <= limit; i += integer)
+        {
+            resultValue.Add(i);
+        }
+
+        return resultValue;
     }
 
     #endregion

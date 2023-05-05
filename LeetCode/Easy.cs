@@ -1,6 +1,6 @@
-﻿namespace Practice;
+﻿namespace Practice.LeetCode;
 
-public static class LeetCode
+public static class Easy
 {
     #region #1
     

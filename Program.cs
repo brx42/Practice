@@ -1,3 +1,4 @@
 ﻿using Practice;
+using Practice.Codewars;
 
-Console.WriteLine(Codewars.Opposite(-58000));
+Console.WriteLine(Kyu8.FindMultiples(5, 25));
