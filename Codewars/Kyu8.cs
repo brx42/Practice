@@ -18,7 +18,7 @@ public static class Kyu8
     public static string Greet(string name)
     {
         string resultString = $"Hello, {name} how are you doing today?";
-        
+
         return resultString;
     }
 
@@ -40,13 +40,47 @@ public static class Kyu8
     public static List<int> FindMultiples(int integer, int limit)
     {
         List<int> resultValue = new();
-        
+
         for (int i = integer; i <= limit; i += integer)
         {
             resultValue.Add(i);
         }
 
         return resultValue;
+    }
+
+    #endregion
+
+    #region Twice as old
+
+    public static int TwiceAsOld(int dadYears, int sonYears)
+    {
+        int ageAtBirth = dadYears - sonYears;
+
+        int twiceAsOld = ageAtBirth * 2;
+
+        return dadYears >= twiceAsOld
+            ? dadYears - twiceAsOld
+            : twiceAsOld - dadYears;
+    }
+
+    #endregion
+
+    #region Sum of positive
+
+    public static int PositiveSum(int[] arr)
+    {
+        int resultSum = 0;
+
+        foreach (int i in arr)
+        {
+            if (i >= 0)
+            {
+                resultSum += i;
+            }
+        }
+
+        return resultSum;
     }
 
     #endregion
