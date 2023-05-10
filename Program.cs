@@ -1,4 +1,4 @@
 ﻿using Practice;
 using Practice.Codewars;
 
-Console.WriteLine(Kyu8.TwiceAsOld(45, 30));
+Console.WriteLine(Kyu8.Digitize(3568));

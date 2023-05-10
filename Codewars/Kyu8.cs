@@ -84,4 +84,21 @@ public static class Kyu8
     }
 
     #endregion
+
+    #region Convert number to reversed array of digits
+
+    public static long[] Digitize(long n)
+    {
+        char[] numbersToStr = n.ToString().Reverse().ToArray();
+
+        List<long> result = new();
+        for (int i = 0; i < numbersToStr.Length - 1; i++)
+        {
+            // result.Add(numbersToStr.);
+        }
+
+        return result.ToArray();
+    }
+
+    #endregion
 }
