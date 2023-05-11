@@ -1,4 +1,3 @@
-﻿using Practice;
-using Practice.Codewars;
+﻿using Practice.Codewars;
 
-Console.WriteLine(Kyu8.Digitize(3568));
+Console.WriteLine(Kyu8.AbbrevName("good luck!"));

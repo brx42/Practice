@@ -89,15 +89,46 @@ public static class Kyu8
 
     public static long[] Digitize(long n)
     {
-        char[] numbersToStr = n.ToString().Reverse().ToArray();
+        string numbersToStr = n.ToString();
 
         List<long> result = new();
-        for (int i = 0; i < numbersToStr.Length - 1; i++)
+        for (int i = numbersToStr.Length - 1; i >= 0; i--)
         {
-            // result.Add(numbersToStr.);
+            long convertingNumb = Convert.ToInt64(long.Parse(numbersToStr[i].ToString()));
+            
+            result.Add(convertingNumb);
         }
 
         return result.ToArray();
+    }
+
+    #endregion
+
+    #region Opposites Attract
+
+    public static bool LoveFunc(int flower1, int flower2)
+    {
+        if ((flower1 % 2 == 0 && flower2 % 2 != 0) || flower1 % 2 != 0 && flower2 % 2 == 0)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    #endregion
+
+    #region Abbreviate a Two Word Name
+
+    public static string AbbrevName(string name)
+    {
+        char firstLetter = name[0];
+        
+        int indexSecondLetter = name.IndexOf(' ');
+        char secondLetter = name[indexSecondLetter + 1];
+
+        string result = $"{firstLetter}.{secondLetter}";
+        return result.ToUpper();
     }
 
     #endregion
