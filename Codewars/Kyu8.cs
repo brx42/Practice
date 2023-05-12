@@ -142,4 +142,47 @@ public static class Kyu8
     }
 
     #endregion
+
+    #region Get the mean of an array
+
+    public static int GetAverage(int[] marks)
+    {
+        int sumPoint = marks.Sum();
+        int result = sumPoint / marks.Length;
+        return result;
+    }
+
+    #endregion
+
+    #region Century From Year
+
+    public static int СenturyFromYear(int year)
+    {
+        int[] yearNumbs = Enumerable.Repeat(year, year.ToString().Length).ToArray();
+
+
+        List<int> numbs = new();
+
+        foreach (var VARIABLE in Enumerable.Range(0, year.ToString().Length))
+        {
+            
+        }
+
+
+        int century = yearNumbs.ElementAt(0) + yearNumbs.ElementAt(1);
+        for (int i = 2; i <= yearNumbs.Length - 1; i++)
+        {
+            if (yearNumbs[i] < 1)
+            {
+                continue;
+            }
+            
+            century++;
+            break;
+        }
+
+        return century;
+    }
+
+    #endregion
 }
