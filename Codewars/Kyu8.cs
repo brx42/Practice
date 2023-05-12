@@ -108,7 +108,8 @@ public static class Kyu8
 
     public static bool LoveFunc(int flower1, int flower2)
     {
-        if ((flower1 % 2 == 0 && flower2 % 2 != 0) || flower1 % 2 != 0 && flower2 % 2 == 0)
+        if ((flower1 % 2 == 0 && flower2 % 2 != 0) 
+            || flower1 % 2 != 0 && flower2 % 2 == 0)
         {
             return true;
         }
@@ -129,6 +130,15 @@ public static class Kyu8
 
         string result = $"{firstLetter}.{secondLetter}";
         return result.ToUpper();
+    }
+
+    #endregion
+
+    #region Count Odd Numbers below n
+
+    public static ulong OddCount(ulong n)
+    {
+        return n / 2;
     }
 
     #endregion
