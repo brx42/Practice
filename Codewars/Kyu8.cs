@@ -95,7 +95,7 @@ public static class Kyu8
         for (int i = numbersToStr.Length - 1; i >= 0; i--)
         {
             long convertingNumb = Convert.ToInt64(long.Parse(numbersToStr[i].ToString()));
-            
+
             result.Add(convertingNumb);
         }
 
@@ -108,7 +108,7 @@ public static class Kyu8
 
     public static bool LoveFunc(int flower1, int flower2)
     {
-        if ((flower1 % 2 == 0 && flower2 % 2 != 0) 
+        if ((flower1 % 2 == 0 && flower2 % 2 != 0)
             || flower1 % 2 != 0 && flower2 % 2 == 0)
         {
             return true;
@@ -124,7 +124,7 @@ public static class Kyu8
     public static string AbbrevName(string name)
     {
         char firstLetter = name[0];
-        
+
         int indexSecondLetter = name.IndexOf(' ');
         char secondLetter = name[indexSecondLetter + 1];
 
@@ -158,27 +158,17 @@ public static class Kyu8
 
     public static int СenturyFromYear(int year)
     {
-        int[] yearNumbs = Enumerable.Repeat(year, year.ToString().Length).ToArray();
+        int length = year.ToString().Length - 2;
+        
+        string firstTwoNumbs = year.ToString().Remove(length);
+        string otherNumbs = year.ToString().Remove(0, length);
 
+        int century = Convert.ToInt32(firstTwoNumbs);
+        int years = Convert.ToInt32(otherNumbs);
 
-        List<int> numbs = new();
-
-        foreach (var VARIABLE in Enumerable.Range(0, year.ToString().Length))
+        if (years >= 1)
         {
-            
-        }
-
-
-        int century = yearNumbs.ElementAt(0) + yearNumbs.ElementAt(1);
-        for (int i = 2; i <= yearNumbs.Length - 1; i++)
-        {
-            if (yearNumbs[i] < 1)
-            {
-                continue;
-            }
-            
             century++;
-            break;
         }
 
         return century;

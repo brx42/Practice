@@ -1,3 +1,3 @@
 ﻿using Practice.Codewars;
 
-Console.WriteLine(Kyu8.СenturyFromYear(1700));
+Console.WriteLine(Kyu8.СenturyFromYear(1701));
