@@ -175,4 +175,24 @@ public static class Kyu8
     }
 
     #endregion
+
+    #region Is n divisible by x and y?
+
+    public static bool IsDivisible(int n, int x, int y)
+    {
+        return n % x == 0 && n % y == 0;
+    }
+
+    #endregion
+
+    #region Reversed Strings
+
+    public static string Solution(string str)
+    {
+        IEnumerable<char> result = str.Reverse();
+
+        return string.Concat(result);
+    }
+
+    #endregion
 }
