@@ -1,4 +1,7 @@
-﻿namespace Practice.Codewars;
+﻿using System.Text;
+using Microsoft.VisualBasic;
+
+namespace Practice.Codewars;
 
 public static class Kyu8
 {
@@ -159,7 +162,7 @@ public static class Kyu8
     public static int СenturyFromYear(int year)
     {
         int length = year.ToString().Length - 2;
-        
+
         string firstTwoNumbs = year.ToString().Remove(length);
         string otherNumbs = year.ToString().Remove(0, length);
 
@@ -187,11 +190,38 @@ public static class Kyu8
 
     #region Reversed Strings
 
-    public static string Solution(string str)
+    public static string ReversedStrings(string str)
     {
         IEnumerable<char> result = str.Reverse();
 
         return string.Concat(result);
+    }
+
+    #endregion
+
+    #region Reversed Words
+
+    public static string ReverseWords(string str)
+    {
+        StringBuilder result = new();
+
+        while (true)
+        {
+            if (!str.Contains(' '))
+            {
+                result.Append(' ' + str);
+
+                break;
+            }
+
+            int lastIndex = str.LastIndexOf(' ');
+
+            result.Append(str[lastIndex..]);
+
+            str = str.Remove(lastIndex);
+        }
+
+        return result.Remove(0, 1).ToString();
     }
 
     #endregion
