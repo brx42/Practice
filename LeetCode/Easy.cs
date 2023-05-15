@@ -1,4 +1,6 @@
-﻿namespace Practice.LeetCode;
+﻿using System.Text;
+
+namespace Practice.LeetCode;
 
 public static class Easy
 {
@@ -77,6 +79,31 @@ public static class Easy
         }
 
         return result;
+    }
+
+    #endregion
+
+    #region 14
+
+    public static string LongestCommonPrefix(string[] strs)
+    {
+        int i = 0;
+        StringBuilder sb = new();
+
+        string strSort = strs.OrderBy(s => s.Length).First();
+
+        foreach (char c in strSort)
+        {
+            if (strs.Any(s => s[i] != c))
+            {
+                break;
+            }
+
+            sb.Append(c);
+            i++;
+        }
+
+        return sb.ToString();
     }
 
     #endregion
