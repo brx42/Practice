@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections;
+using System.Text;
 
 namespace Practice.LeetCode;
 
@@ -14,7 +15,7 @@ public static class Easy
             {
                 if (target == nums[j] + nums[i])
                 {
-                    return new[] { i, j };
+                    return new[] {i, j};
                 }
             }
         }
@@ -108,7 +109,7 @@ public static class Easy
 
     #endregion
 
-    #region 20
+    #region 20 (No solution)
 
     public static bool IsValid(string s)
     {
@@ -116,7 +117,9 @@ public static class Easy
         {
             return false;
         }
-        
+
+        throw new Exception();
+
         // List<bool> results = new();
         //
         // if (s.Length == 1)
@@ -143,6 +146,19 @@ public static class Easy
         // }
         //
         // return results.All(x => x);
+    }
+
+    #endregion
+
+    #region 136
+
+    public static int SingleNumber(int[] nums)
+    {
+        return nums
+            .GroupBy(x => x)
+            .Where(x => x.Count() == x.Max())
+            .Select(x => x.Key)
+            .First();
     }
 
     #endregion
