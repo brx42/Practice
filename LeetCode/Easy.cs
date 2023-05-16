@@ -14,7 +14,7 @@ public static class Easy
             {
                 if (target == nums[j] + nums[i])
                 {
-                    return new[] {i, j};
+                    return new[] { i, j };
                 }
             }
         }
@@ -104,6 +104,45 @@ public static class Easy
         }
 
         return sb.ToString();
+    }
+
+    #endregion
+
+    #region 20
+
+    public static bool IsValid(string s)
+    {
+        if (s.Length % 2 != 0)
+        {
+            return false;
+        }
+        
+        // List<bool> results = new();
+        //
+        // if (s.Length == 1)
+        // {
+        //     return false;
+        // }
+        //
+        // for (int i = 0; i <= s.Length - 1; i++)
+        // {
+        //     bool resultTrue = (s[i] == '(' && s[i + 1] == ')')
+        //                       || (s[i] == '{' && s[i + 1] == '}')
+        //                       || (s[i] == '[' && s[i + 1] == ']');
+        //
+        //     if (s.Length % 2 == 0 && !resultTrue)
+        //     {
+        //         resultTrue = (s[0] == '(' && s[^1] == ')')
+        //                      || (s[0] == '{' && s[^1] == '}')
+        //                      || (s[0] == '[' && s[^1] == ']');
+        //     }
+        //
+        //     results.Add(resultTrue);
+        //
+        //     i++;
+        // }
+        //
+        // return results.All(x => x);
     }
 
     #endregion
