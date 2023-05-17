@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 using Microsoft.VisualBasic;
 
 namespace Practice.Codewars;
@@ -222,6 +223,19 @@ public static class Kyu8
         }
 
         return result.Remove(0, 1).ToString();
+    }
+
+    #endregion
+
+    #region Did she say hallo? (No solution)
+
+    public static bool ValidateHello(string greetings)
+    {
+        string[] hellos = "hello ciao salut hallo ahoj czesc".Split();
+
+        List<bool> result = hellos.Select(hello => hello.Contains(greetings.ToLower())).ToList();
+
+        return result.Any();
     }
 
     #endregion

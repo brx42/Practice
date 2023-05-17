@@ -156,7 +156,7 @@ public static class Easy
     {
         return nums
             .GroupBy(x => x)
-            .Where(x => x.Count() == x.Max())
+            .Where(x => x.Count() == 1)
             .Select(x => x.Key)
             .First();
     }
