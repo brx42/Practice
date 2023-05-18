@@ -4,4 +4,4 @@ using Practice.LeetCode;
 // Console.WriteLine(Easy.SingleNumber(new []{ 1, 1, 2, 3, 4, 4, 3}));
 
 
-Console.WriteLine(Kyu8.ValidateHello("HELLO"));
+Console.WriteLine(Kyu7.Compare(104, 112));

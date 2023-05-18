@@ -231,11 +231,7 @@ public static class Kyu8
 
     public static bool ValidateHello(string greetings)
     {
-        string[] hellos = "hello ciao salut hallo ahoj czesc".Split();
-
-        List<bool> result = hellos.Select(hello => hello.Contains(greetings.ToLower())).ToList();
-
-        return result.Any();
+        return Regex.IsMatch(greetings, "hello|ciao|salut|hallo|hola|ahoj|czesc", RegexOptions.IgnoreCase);
     }
 
     #endregion
