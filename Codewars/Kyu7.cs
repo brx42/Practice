@@ -2,7 +2,7 @@
 
 public static class Kyu7
 {
-    #region Compare 2 digit numbers
+    #region Compare 2 digit numbers (No solution)
 
     public static string Compare(int a, int b)
     {
@@ -12,15 +12,43 @@ public static class Kyu7
 
         string aStr = a.ToString();
         string bStr = b.ToString();
-        
+
         int result = aStr.Count(x => bStr.Contains(x));
 
-        if (result == 2)
+        if (result == aStr.Length)
         {
             return oneHundredProc;
         }
 
-        return result == 1 ? fiftyProc : zeroProc;
+        if (result < aStr.Length && result > 0)
+        {
+            return fiftyProc;
+        }
+
+        return zeroProc;
+    }
+
+    #endregion
+
+    #region Length and two values.
+
+    public static object[] Alternate(int n, object firstValue, object secondValue)
+    {
+        object[] resultArr = Array.Empty<object>();
+
+        if (n == 0)
+        {
+            return resultArr;
+        }
+
+        for (int i = 0; i < n; i++)
+        {
+            resultArr = i % 2 != 0
+                ? resultArr.Append(secondValue).ToArray()
+                : resultArr.Append(firstValue).ToArray();
+        }
+
+        return resultArr;
     }
 
     #endregion
