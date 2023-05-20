@@ -1,4 +1,6 @@
-﻿namespace Practice.Codewars;
+﻿using System.Text;
+
+namespace Practice.Codewars;
 
 public static class Kyu7
 {
@@ -49,6 +51,18 @@ public static class Kyu7
         }
 
         return resultArr;
+    }
+
+    #endregion
+
+    #region Disemvowel Trolls
+
+    public static string Disemvowel(string str)
+    {
+        char[] chArr = {'a', 'e', 'i', 'o', 'u'};
+
+        return chArr.Aggregate(str, (current, c) => 
+            current.Replace(c.ToString(), string.Empty, StringComparison.InvariantCultureIgnoreCase));
     }
 
     #endregion

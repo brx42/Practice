@@ -1,6 +1,6 @@
-﻿using System.Text;
+﻿using System.Globalization;
+using System.Text;
 using System.Text.RegularExpressions;
-using Microsoft.VisualBasic;
 
 namespace Practice.Codewars;
 
@@ -227,11 +227,66 @@ public static class Kyu8
 
     #endregion
 
-    #region Did she say hallo? (No solution)
+    #region Did she say hallo?
 
     public static bool ValidateHello(string greetings)
     {
         return Regex.IsMatch(greetings, "hello|ciao|salut|hallo|hola|ahoj|czesc", RegexOptions.IgnoreCase);
+    }
+
+    #endregion
+
+    #region Total amount of points
+
+    public static int TotalPoints(string[] games)
+    {
+        int result = 0;
+        int i = 0;
+
+        foreach (string game in games)
+        {
+            int x = Convert.ToInt32(game[0]);
+            int y = Convert.ToInt32(game[2]);
+
+            if (x > y)
+            {
+                result += 3;
+                i++;
+                continue;
+            }
+
+            if (x < y)
+            {
+                i++;
+                continue;
+            }
+
+            if (x == y)
+            {
+                result += 1;
+                i++;
+            }
+        }
+
+        return result;
+    }
+
+    #endregion
+
+    #region Calculate average 
+
+    public static double FindAverage(double[] array)
+    {
+        return array.Any() ? array.Average() : 0;
+    }
+
+    #endregion
+
+    #region Name Shuffler
+
+    public static string NameShuffler(string str)
+    {
+        return string.Join(' ', str.Split().Reverse());
     }
 
     #endregion
