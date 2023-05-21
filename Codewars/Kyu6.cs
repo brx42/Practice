@@ -1,4 +1,6 @@
-﻿namespace Practice.Codewars;
+﻿using System.Reflection.Metadata;
+
+namespace Practice.Codewars;
 
 public static class Kyu6
 {
@@ -20,7 +22,19 @@ public static class Kyu6
             result += valDegree;
         }
 
-        return value == (int)result;
+        return value == (int) result;
+    }
+
+    #endregion
+
+    #region Find the odd int
+
+    public static int FindIt(int[] seq)
+    {
+        return seq
+            .GroupBy(x => x)
+            .First(x => x.Count() % 2 != 0)
+            .Key;
     }
 
     #endregion
