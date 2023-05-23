@@ -69,30 +69,21 @@ public static class Kyu6
 
     public static string SpinWords(string sentence)
     {
-        string[] arrWords = sentence.Split();
-
-        if (arrWords.Length == 1)
+        if (!sentence.Contains(' '))
         {
-            return string.Concat(arrWords.Single().Reverse());
+            return string.Concat(sentence.Reverse());
         }
 
-        StringBuilder result = new();
+        string[] arrWords = sentence.Split().Where(str => str.Length >= 5).ToArray();
+
+        StringBuilder result = new(sentence);
         
         for (int i = 0; i < arrWords.Length; i++)
         {
-            result.Append(arrWords[i].Length >= 5
-                ? string.Concat(arrWords[i].Reverse())
-                : arrWords[i]);
+            result.Replace(arrWords.ElementAt(i), string.Concat(arrWords.ElementAt(i).Reverse()));
         }
 
-        return string.Join(' ', result.ToString());
-
         return result.ToString();
-
-        StringBuilder strBuild = new();
-
-        return arrWords.Aggregate(strBuild, (current, value) =>
-            current.Append(value.Length >= 5 ? string.Concat(value.Reverse()) : value)).ToString();
     }
 
     #endregion
