@@ -1,6 +1,7 @@
 ﻿using System.Reflection.Metadata;
 using System.Runtime.InteropServices.ComTypes;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Practice.Codewars;
 
@@ -77,13 +78,51 @@ public static class Kyu6
         string[] arrWords = sentence.Split().Where(str => str.Length >= 5).ToArray();
 
         StringBuilder result = new(sentence);
-        
+
         for (int i = 0; i < arrWords.Length; i++)
         {
             result.Replace(arrWords.ElementAt(i), string.Concat(arrWords.ElementAt(i).Reverse()));
         }
 
         return result.ToString();
+    }
+
+    #endregion
+
+    #region Create Phone Number
+
+    public static string CreatePhoneNumber(int[] numbers)
+    {
+        StringBuilder strBuild = new();
+
+        for (int i = 0; i <= numbers.Length - 1;)
+        {
+            switch (i)
+            {
+                case 0 when !strBuild.ToString().Contains('('):
+                    strBuild.Append('(');
+                    break;
+                
+                case 3 when !strBuild.ToString().Contains(')'):
+                    strBuild.Append(')');
+                    break;
+                
+                case 3 when !strBuild.ToString().Contains(' '):
+                    strBuild.Append(' ');
+                    break;
+                
+                case 6 when !strBuild.ToString().Contains('-'):
+                    strBuild.Append('-');
+                    break;
+                
+                default:
+                    strBuild.Append(numbers[i]);
+                    i++;
+                    break;
+            }
+        }
+
+        return strBuild.ToString();
     }
 
     #endregion
