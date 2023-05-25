@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Text;
+﻿using System.Text;
 
 namespace Practice.LeetCode;
 
@@ -118,7 +117,20 @@ public static class Easy
             return false;
         }
 
-        throw new Exception();
+        int middle = s.Length / 2;
+        
+        for (int i = 0; i <= middle; i++)
+        {
+            for (int j = s.Length - 1; j >= middle; j--)
+            {
+                if (s.ElementAt(i) != s.ElementAt(j))
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
 
         // List<bool> results = new();
         //
