@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Practice.Codewars;
+﻿namespace Practice.Codewars;
 
 public static class Kyu7
 {

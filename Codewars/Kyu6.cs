@@ -1,7 +1,4 @@
-﻿using System.Reflection.Metadata;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿using System.Text;
 
 namespace Practice.Codewars;
 
@@ -123,6 +120,22 @@ public static class Kyu6
         }
 
         return strBuild.ToString();
+    }
+
+    #endregion
+
+    #region Multiplication table (In process)
+
+    public static int[,] MultiplicationTable(int size)
+    {
+        List<int> tableSize = new(); 
+
+        for (int i = 1; i <= size; i++)
+        {
+            tableSize.Add(i);
+        }
+
+        return null;
     }
 
     #endregion

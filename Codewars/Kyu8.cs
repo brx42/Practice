@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Practice.Codewars;
@@ -273,7 +272,7 @@ public static class Kyu8
 
     #endregion
 
-    #region Calculate average 
+    #region Calculate average
 
     public static double FindAverage(double[] array)
     {
@@ -287,6 +286,22 @@ public static class Kyu8
     public static string NameShuffler(string str)
     {
         return string.Join(' ', str.Split().Reverse());
+    }
+
+    #endregion
+
+    #region Is he gonna survive?
+
+    public static bool Hero(int bullets, int dragons)
+    {
+        if (bullets <= dragons
+            || bullets == 0
+            || dragons == 0)
+        {
+            return false;
+        }
+
+        return bullets / dragons >= 2;
     }
 
     #endregion
