@@ -112,52 +112,50 @@ public static class Easy
 
     public static bool IsValid(string s)
     {
-        if (s.Length % 2 != 0)
+        Dictionary<char, char> dict = new()
+        {
+            {'(', ')'},
+            {'{', '}'},
+            {'[', ']'}
+        };
+
+        int openCount = s.Count(c => dict.ContainsKey(c));
+        int closeCount = s.Count(c => dict.ContainsValue(c));
+        
+        if (s.Length % 2 != 0
+            || dict.ContainsKey(s[^1])
+            || dict.ContainsValue(s[0])
+            || openCount != closeCount)
         {
             return false;
         }
 
-        int middle = s.Length / 2;
-        
-        for (int i = 0; i <= middle; i++)
+        StringBuilder str = new(s);
+
+        for (int i = -1;;)
         {
-            for (int j = s.Length - 1; j >= middle; j--)
+            for (int j = s.Length - 1; j >= s.Length / 2; j--)
             {
-                if (s.ElementAt(i) != s.ElementAt(j))
+                i++;
+                
+                if ((s[i] == '(' && s[j] == ')')
+                    || (s[i] == '{' && s[j] == '}')
+                    || (s[i] == '[' && s[j] == ']'))
                 {
-                    return false;
+                    str.Remove(i, 1);
+                    str.Remove(j - 1, 1);
+                }
+
+                if (i > s.Length / 2)
+                {
+                    break;
                 }
             }
+            
+            break;
         }
 
-        return true;
-
-        // List<bool> results = new();
-        //
-        // if (s.Length == 1)
-        // {
-        //     return false;
-        // }
-        //
-        // for (int i = 0; i <= s.Length - 1; i++)
-        // {
-        //     bool resultTrue = (s[i] == '(' && s[i + 1] == ')')
-        //                       || (s[i] == '{' && s[i + 1] == '}')
-        //                       || (s[i] == '[' && s[i + 1] == ']');
-        //
-        //     if (s.Length % 2 == 0 && !resultTrue)
-        //     {
-        //         resultTrue = (s[0] == '(' && s[^1] == ')')
-        //                      || (s[0] == '{' && s[^1] == '}')
-        //                      || (s[0] == '[' && s[^1] == ']');
-        //     }
-        //
-        //     results.Add(resultTrue);
-        //
-        //     i++;
-        // }
-        //
-        // return results.All(x => x);
+        return !str.ToString().Any();
     }
 
     #endregion
