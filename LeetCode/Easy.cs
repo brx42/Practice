@@ -14,7 +14,7 @@ public static class Easy
             {
                 if (target == nums[j] + nums[i])
                 {
-                    return new[] {i, j};
+                    return new[] { i, j };
                 }
             }
         }
@@ -108,54 +108,16 @@ public static class Easy
 
     #endregion
 
-    #region 20 (No solution)
+    #region 20
 
     public static bool IsValid(string s)
     {
-        Dictionary<char, char> dict = new()
+        while (s.Contains("()") || s.Contains("[]") || s.Contains("{}"))
         {
-            {'(', ')'},
-            {'{', '}'},
-            {'[', ']'}
-        };
-
-        int openCount = s.Count(c => dict.ContainsKey(c));
-        int closeCount = s.Count(c => dict.ContainsValue(c));
-        
-        if (s.Length % 2 != 0
-            || dict.ContainsKey(s[^1])
-            || dict.ContainsValue(s[0])
-            || openCount != closeCount)
-        {
-            return false;
+            s = s.Replace("()", "").Replace("[]", "").Replace("{}", "");
         }
 
-        StringBuilder str = new(s);
-
-        for (int i = -1;;)
-        {
-            for (int j = s.Length - 1; j >= s.Length / 2; j--)
-            {
-                i++;
-                
-                if ((s[i] == '(' && s[j] == ')')
-                    || (s[i] == '{' && s[j] == '}')
-                    || (s[i] == '[' && s[j] == ']'))
-                {
-                    str.Remove(i, 1);
-                    str.Remove(j - 1, 1);
-                }
-
-                if (i > s.Length / 2)
-                {
-                    break;
-                }
-            }
-            
-            break;
-        }
-
-        return !str.ToString().Any();
+        return s.Length == 0;
     }
 
     #endregion
@@ -169,6 +131,31 @@ public static class Easy
             .Where(x => x.Count() == 1)
             .Select(x => x.Key)
             .First();
+    }
+
+    #endregion
+
+    #region 26
+
+    public static int RemoveDuplicates(int[] nums)
+    {
+        if (nums.Length == 0)
+        {
+            return 0;
+        }
+
+        int i = 0;
+
+        for (int j = 1; j < nums.Length; j++)
+        {
+            if (nums[j] != nums[i])
+            {
+                i++;
+                nums[i] = nums[j];
+            }
+        }
+
+        return i + 1;
     }
 
     #endregion
