@@ -164,29 +164,9 @@ public static class Easy
 
     public static int StrStr(string haystack, string needle)
     {
-        int j = 0;
-
-        int result = 100;
-        for (int i = 0; i < haystack.Length; i++)
+        if (haystack.Contains(needle))
         {
-            if (haystack[i] == needle[j])
-            {
-                if (result < 100)
-                {
-                    goto Next;
-                }
-                result = i;
-                
-                Next:
-
-                if (haystack[i] == needle.Last()
-                    && i == j)
-                {
-                    return result;
-                }
-
-                j++;
-            }
+            // some code
         }
 
         return -1;
