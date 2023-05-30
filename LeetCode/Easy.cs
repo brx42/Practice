@@ -164,12 +164,9 @@ public static class Easy
 
     public static int StrStr(string haystack, string needle)
     {
-        if (haystack.Contains(needle))
-        {
-            // some code
-        }
-
-        return -1;
+        return haystack.Contains(needle)
+            ? haystack.IndexOf(needle, StringComparison.Ordinal)
+            : -1;
     }
 
     #endregion
