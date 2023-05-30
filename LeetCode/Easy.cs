@@ -170,4 +170,20 @@ public static class Easy
     }
 
     #endregion
+
+    #region 58
+
+    public static int LengthOfLastWord(string s)
+    {
+        string[] strArr = s.Split(' ');
+
+        if (strArr.Length == 1)
+        {
+            return strArr.First().Length;
+        }
+        
+        return strArr.Last(word => word.Length >= 1).Length;
+    }
+
+    #endregion
 }
