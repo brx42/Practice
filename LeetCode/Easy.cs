@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Practice.LeetCode;
 
@@ -181,8 +182,59 @@ public static class Easy
         {
             return strArr.First().Length;
         }
-        
+
         return strArr.Last(word => word.Length >= 1).Length;
+    }
+
+    #endregion
+
+    #region 67 (No solution)
+
+    public static string AddBinary(string a, string b)
+    {
+        return Convert.ToString(Convert.ToInt32(a, 2) + Convert.ToInt32(b, 2), 2);
+    }
+
+    #endregion
+
+    #region 125
+
+    public static bool IsPalindrome(string s)
+    {
+        s = Regex.Replace(s, "[^a-zA-Z0-9]+", "", RegexOptions.Compiled).ToLower();
+
+        string ss = string.Concat(s.Reverse());
+
+        return s == ss;
+    }
+
+    #endregion
+
+    #region 35
+
+    public static int SearchInsert(int[] nums, int target) 
+    {
+        if (!nums.Contains(target))
+        {
+            // return nums.Where(x => x < target && x > target);
+        }
+
+        int res = 0;
+        for (int i = 0; i <= nums.Length - 1; i++)
+        {
+            if (nums[i] < target && nums[i + 1] > target)
+            {
+                res = i + 1;
+            }
+            
+            if (nums[i] == target)
+            {
+                res = i;
+                break;
+            }
+        }
+
+        return res;
     }
 
     #endregion
