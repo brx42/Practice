@@ -216,17 +216,18 @@ public static class Easy
     {
         if (!nums.Contains(target))
         {
-            // return nums.Where(x => x < target && x > target);
+            List<int> result = nums.ToList();
+            
+            result.Add(target);
+
+            result = result.OrderBy(i => i).ToList();
+
+            return result.IndexOf(target);
         }
 
         int res = 0;
         for (int i = 0; i <= nums.Length - 1; i++)
         {
-            if (nums[i] < target && nums[i + 1] > target)
-            {
-                res = i + 1;
-            }
-            
             if (nums[i] == target)
             {
                 res = i;
