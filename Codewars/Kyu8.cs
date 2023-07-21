@@ -305,4 +305,30 @@ public static class Kyu8
     }
 
     #endregion
+
+    #region Draw stairs
+
+    public static string DrawStairs(int n)
+    {
+        const char charI = 'I';
+        const char charSpace = ' ';
+
+        StringBuilder strBuilder = new();
+        for (int i = 0; i < n; i++)
+        {
+            if (i == 0)
+            {
+                strBuilder.Append(charI);
+                continue;
+            }
+            
+            strBuilder.Append('\n');
+            strBuilder.Append(charSpace, i);
+            strBuilder.Append(charI);
+        }
+
+        return strBuilder.ToString();
+    }
+
+    #endregion
 }
