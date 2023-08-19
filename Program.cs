@@ -4,4 +4,4 @@ using Practice.LeetCode;
 // Console.WriteLine(Easy.SearchInsert(new []{1, 3, 5, 6}, 2));
 
 
-Console.WriteLine("How can mirrors be real if our eyes aren't real".ToJadenCase());
+Console.WriteLine(Kyu8.DrawStairs(10));
