@@ -1,4 +1,7 @@
-﻿namespace Practice.Codewars;
+﻿using System.Globalization;
+using System.Text;
+
+namespace Practice.Codewars;
 
 public static class Kyu7
 {
@@ -72,6 +75,50 @@ public static class Kyu7
         return year % 4 == 0 &&
                year % 100 != 0 ||
                year % 400 == 0;
+    }
+
+    #endregion
+
+    #region Jaden Casing Strings
+
+    public static string ToJadenCase(this string phrase)
+    {
+        if (phrase == null)
+        {
+            throw new ArgumentNullException(nameof(phrase));
+        }
+        
+        char[] lettersInPhrase = phrase.ToCharArray();
+        
+        StringBuilder stringBuilder = new(lettersInPhrase.Length);
+
+        for (int i = 0; i < lettersInPhrase.Length; i++)
+        {
+            char currentLetter = lettersInPhrase[i];
+            
+            if (i == 0)
+            {
+                stringBuilder.Append(char.ToUpper(currentLetter));
+                continue;
+            }
+
+            if (char.IsWhiteSpace(currentLetter))
+            {
+                stringBuilder.Append(currentLetter);
+                stringBuilder.Append(char.ToUpper(lettersInPhrase[i + 1]));
+                
+                continue;
+            }
+
+            if (char.IsWhiteSpace(lettersInPhrase[i - 1]))
+            {
+                continue;
+            }
+
+            stringBuilder.Append(currentLetter);
+        }
+
+        return stringBuilder.ToString();
     }
 
     #endregion

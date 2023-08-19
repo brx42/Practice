@@ -321,13 +321,30 @@ public static class Kyu8
                 strBuilder.Append(charI);
                 continue;
             }
-            
+
             strBuilder.Append('\n');
             strBuilder.Append(charSpace, i);
             strBuilder.Append(charI);
         }
 
         return strBuilder.ToString();
+    }
+
+    #endregion
+
+    #region Double Char
+
+    public static string DoubleChar(string s)
+    {
+        StringBuilder strBuild = new();
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            strBuild.Append(s[i]);
+            strBuild.Append(s[i]);
+        }
+
+        return strBuild.ToString();
     }
 
     #endregion
