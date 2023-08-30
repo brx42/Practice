@@ -60,9 +60,9 @@ public static class Kyu7
 
     public static string Disemvowel(string str)
     {
-        char[] chArr = {'a', 'e', 'i', 'o', 'u'};
+        char[] chArr = { 'a', 'e', 'i', 'o', 'u' };
 
-        return chArr.Aggregate(str, (current, c) => 
+        return chArr.Aggregate(str, (current, c) =>
             current.Replace(c.ToString(), string.Empty, StringComparison.InvariantCultureIgnoreCase));
     }
 
@@ -87,15 +87,15 @@ public static class Kyu7
         {
             throw new ArgumentNullException(nameof(phrase));
         }
-        
+
         char[] lettersInPhrase = phrase.ToCharArray();
-        
+
         StringBuilder stringBuilder = new(lettersInPhrase.Length);
 
         for (int i = 0; i < lettersInPhrase.Length; i++)
         {
             char currentLetter = lettersInPhrase[i];
-            
+
             if (i == 0)
             {
                 stringBuilder.Append(char.ToUpper(currentLetter));
@@ -106,7 +106,7 @@ public static class Kyu7
             {
                 stringBuilder.Append(currentLetter);
                 stringBuilder.Append(char.ToUpper(lettersInPhrase[i + 1]));
-                
+
                 continue;
             }
 
@@ -119,6 +119,53 @@ public static class Kyu7
         }
 
         return stringBuilder.ToString();
+    }
+
+    #endregion
+
+    #region Selective fear of numbers
+
+    public static bool AmIAfraid(string day, int num)
+    {
+        bool result = day switch
+        {
+            "Monday" => num == 12,
+            "Tuesday" => num > 95,
+            "Wednesday" => num == 34,
+            "Thursday" => num == 0,
+            "Friday" => num % 2 == 0,
+            "Saturday" => num == 56,
+            "Sunday" => num is 666 or -666,
+            _ => throw new ArgumentOutOfRangeException(nameof(day), day, null)
+        };
+
+        return result;
+    }
+
+    #endregion
+
+    #region Two numbers are positive
+
+    public static bool TwoArePositive(int a, int b, int c)
+    {
+        int count = 0;
+
+        if (a > 0)
+        {
+            count++;
+        }
+
+        if (b > 0)
+        {
+            count++;
+        }
+
+        if (c > 0)
+        {
+            count++;
+        }
+
+        return count == 2;
     }
 
     #endregion

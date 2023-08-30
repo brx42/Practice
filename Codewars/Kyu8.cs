@@ -348,4 +348,54 @@ public static class Kyu8
     }
 
     #endregion
+
+    #region Paperwork
+
+    public static int Paperwork(int n, int m)
+    {
+        if (n < 0 || m < 0)
+        {
+            return 0;
+        }
+        return n * m;
+    }
+
+    #endregion
+
+    #region Even or Odd
+
+    public static string EvenOrOdd(int number)
+    {
+        return number % 2 == 0 ? "Even" : "Odd";
+    }
+
+    #endregion
+
+    #region Find the smallest integer in the array
+
+    public static int FindSmallestInt(int[] args)
+    {
+        return args.Min();
+    }
+
+    #endregion
+
+    #region Stringy Strings
+
+    public static string Stringy(int size)
+    {
+        const string one = "1";
+        const string zero = "0";
+
+        StringBuilder sb = new(size);
+
+        for (int i = 0; i < size; i++)
+        {
+            sb.Append(i % 2 == 0 ? one : zero);
+        }
+
+        return sb.ToString();
+    }
+
+    #endregion
 }
