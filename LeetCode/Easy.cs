@@ -212,12 +212,12 @@ public static class Easy
 
     #region 35
 
-    public static int SearchInsert(int[] nums, int target) 
+    public static int SearchInsert(int[] nums, int target)
     {
         if (!nums.Contains(target))
         {
             List<int> result = nums.ToList();
-            
+
             result.Add(target);
 
             result = result.OrderBy(i => i).ToList();
@@ -236,6 +236,28 @@ public static class Easy
         }
 
         return res;
+    }
+
+    #endregion
+
+    #region 217
+
+    public static bool ContainsDuplicate(int[] nums)
+    {
+        return nums.SequenceEqual(nums.Distinct());
+    }
+
+    #endregion
+
+    #region 349
+
+    public static int[] Intersection(int[] nums1, int[] nums2)
+    {
+        int[] result = nums1.Intersect(nums2).ToArray();
+        
+        GC.Collect();
+        
+        return result;
     }
 
     #endregion

@@ -1,7 +1,7 @@
 ﻿using Practice.Codewars;
 using Practice.LeetCode;
 
-// Console.WriteLine(Easy.SearchInsert(new []{1, 3, 5, 6}, 2));
+Console.WriteLine(Easy.ContainsDuplicate(new []{1,2,3,1}));
 
 
-Console.WriteLine(Kyu8.DrawStairs(10));
+// Console.WriteLine(Kyu8.DrawStairs(10));
