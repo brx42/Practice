@@ -254,10 +254,51 @@ public static class Easy
     public static int[] Intersection(int[] nums1, int[] nums2)
     {
         int[] result = nums1.Intersect(nums2).ToArray();
-        
+
         GC.Collect();
-        
+
         return result;
+    }
+
+    #endregion
+
+    #region 175
+
+    public static void CombineTwoTables()
+    {
+        string sql = """
+                     SELECT p.firstName, p.lastName, a.city, a.state
+                     FROM Person p
+                     LEFT JOIN Address a ON p.personId = a.personId
+                     """;
+    }
+
+    #endregion
+
+    #region 182
+
+    public static void DuplicateEmails()
+    {
+        string sql = """
+                     select email
+                     from Person
+                     group by email
+                     having count(email) > 1
+                     """;
+    }
+
+    #endregion
+
+    #region 183
+
+    public static void CustomersWhoNeverOrder()
+    {
+        string sql = """
+                     select c.name as Customers
+                     from Customers as c
+                     left join Orders as o on c.id = o.customerId
+                     where o.customerId is null
+                     """;
     }
 
     #endregion
