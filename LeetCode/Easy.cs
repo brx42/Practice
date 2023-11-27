@@ -302,4 +302,18 @@ public static class Easy
     }
 
     #endregion
+
+    #region 181
+
+    public static void EmployeesEarningMoreThanTheirManagers()
+    {
+        string sql = """
+                     select emp1.name as Employee
+                     from Employee emp1
+                     join Employee emp2 on emp1.managerId = emp2.id
+                     where emp1.salary > emp2.salary
+                     """;
+    }
+
+    #endregion
 }
