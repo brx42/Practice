@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bruix\\RiderProjects\\Practice\\Practice.csproj": {}
+    "C:\\Users\\Bruix\\Desktop\\RiderProjects\\TEST\\Practice\\Practice\\Practice\\Practice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bruix\\RiderProjects\\Practice\\Practice.csproj": {
+    "C:\\Users\\Bruix\\Desktop\\RiderProjects\\TEST\\Practice\\Practice\\Practice\\Practice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bruix\\RiderProjects\\Practice\\Practice.csproj",
+        "projectUniqueName": "C:\\Users\\Bruix\\Desktop\\RiderProjects\\TEST\\Practice\\Practice\\Practice\\Practice.csproj",
         "projectName": "Practice",
-        "projectPath": "C:\\Users\\Bruix\\RiderProjects\\Practice\\Practice.csproj",
+        "projectPath": "C:\\Users\\Bruix\\Desktop\\RiderProjects\\TEST\\Practice\\Practice\\Practice\\Practice.csproj",
         "packagesPath": "C:\\Users\\Bruix\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bruix\\RiderProjects\\Practice\\obj\\",
+        "outputPath": "C:\\Users\\Bruix\\Desktop\\RiderProjects\\TEST\\Practice\\Practice\\Practice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Bruix\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Bruix\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,9 +32,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "default"
         }
       },
       "frameworks": {
@@ -56,19 +51,19 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[7.0.8, 7.0.8]"
+              "version": "[7.0.14, 7.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[7.0.8, 7.0.8]"
+              "version": "[7.0.14, 7.0.14]"
             },
             {
               "name": "Microsoft.NETCore.App.Ref",
-              "version": "[7.0.8, 7.0.8]"
+              "version": "[7.0.14, 7.0.14]"
             },
             {
               "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[7.0.8, 7.0.8]"
+              "version": "[7.0.14, 7.0.14]"
             }
           ],
           "frameworkReferences": {
@@ -76,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-preview.6.23330.14\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

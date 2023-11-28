@@ -316,4 +316,22 @@ public static class Easy
     }
 
     #endregion
+
+    #region 196
+
+    public static void DeleteDuplicateEmails()
+    {
+        string sql = """
+                     DELETE FROM Person
+                     WHERE Id NOT IN (
+                         SELECT Id
+                         FROM (
+                             SELECT MIN(Id) Id
+                             FROM Person
+                             GROUP BY Email) p
+                         );
+                     """;
+    }
+    
+    #endregion
 }
