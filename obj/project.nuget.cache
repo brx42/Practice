@@ -1,13 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ETSUQ4D4iPEfRZ0t0DxHAfiNrAHCQWM1JlqtPrnFKKDo8bP9yTmsmI07/U9sXc0JLncjTDxBUVCajpH66PWGPg==",
+  "dgSpecHash": "ROEHxShE0DYOO70clU3G3FOxwduRkQRiOfbu78xr9l3R3c5IxU5WPXcSGnLnxDkt8rSncGIgCFuyfGj/CZ0PCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bruix\\Desktop\\RiderProjects\\TEST\\Practice\\Practice\\Practice\\Practice.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Bruix\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.14\\microsoft.netcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\Bruix\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.14\\microsoft.windowsdesktop.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\Bruix\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.14\\microsoft.aspnetcore.app.ref.7.0.14.nupkg.sha512",
-    "C:\\Users\\Bruix\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.14\\microsoft.netcore.app.host.win-x64.7.0.14.nupkg.sha512"
-  ],
+  "projectFilePath": "C:\\Users\\Bruix\\RiderProjects\\Practice\\Practice.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }
